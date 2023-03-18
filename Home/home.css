@@ -1,0 +1,1165 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: "Cormorant Upright", serif;;
+}
+
+/* Hide ScrollBar and Keep functionalitiess */
+body::-webkit-scrollbar{
+    /* display: none; */
+    /* background-color: grey; */
+}
+/* body::-webkit-scrollbar-thumb{
+    background-color:#DCCA87 ;
+    height: 50px;
+} */
+button{
+    background-color: #DCCA87;
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-family: "Cormorant Upright", serif;;
+}
+button:hover{
+    opacity: 80%;
+}
+/*Start of Top Navigation Section */
+
+.TopNavContainer{
+    background-color: black;
+    width: 80%;
+    padding: 0 10%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.LogoText{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.NavMenuUl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* code for the hamburger icon starts*/
+.hamburger{
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    align-self:center ;
+    display: none;
+    border-radius: 50%;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+}
+ .hamburger:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius:50% ;
+    animation: hamburger_pulse 1s ease infinite;
+}
+ .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+ .hamburger .bar::after,
+ .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+ .hamburger .bar::after{
+    top: 8px;
+}
+ .hamburger .bar::before{
+    bottom: 8px;
+}
+.hamburger.active .bar::before,
+.hamburger.active .bar::after{
+    top: 0;
+    bottom: 0;
+}
+
+/* code for the hamburger icon end*/
+.NavMenuUl li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+.NavMenuUl li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.05rem;
+}
+.NavMenuUl li a:hover{
+    color: #DCCA87;
+}
+.LoginBookContainer{
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    padding: 0% 1%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+.fadeLine{
+    padding: 0 10px;
+}
+.LoginBookContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-family: sans-serif;
+}
+.LoginBookContainer a:hover{
+    color: #DCCA87;
+}
+/* End of Top Navigation Section */
+
+
+/* Start of TKTFD Section */
+.TKTFD{
+    height: auto;
+    display: flex;
+    background-color: transparent;
+}
+.TKTFDContainer{
+    background-color: transparent;
+    /* border: 1px solid white; */
+    /* padding: 30px 0; */
+    height: auto;
+    /* min-height: 700px; */
+    padding: 1% 5% ;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    background-color: transparent;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    /* justify-content: center; */
+}
+.s{
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-self: center;
+}
+.s p{
+    letter-spacing: 1px;
+    padding: 20px 0px;
+    font-family: sans-serif;
+}
+.center{
+    height: 100%;
+    background-color: transparent;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.TCBox{
+
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    /* border: 2px solid black; */
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+.TCBox1{
+    height: 500px;
+    display: flex;
+    width: 40%;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+}
+.TCBox1 p{
+    color: white;
+    margin: 10px 0;
+}
+.TCBox1 h3{
+    color: #DCCA87;
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.TCBox1 img{
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.TCBox1 button{
+    margin: 20px 0;
+    width: 120px;
+}
+.TCBox1 .Longtext{
+    font-size: 1rem;
+    color: #AAAAAA;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+} 
+.TCBox2{
+    height: auto;
+    /* border: 2px solid green; */
+    flex: 55%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    
+}
+.TCBox2 img{
+    height: 550px;
+    width: 100%;
+    object-fit: contain;
+}
+.right{
+    /* padding-top: 100px 0; */
+    height: 700px;
+    width: 10%;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+}
+.right > div{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: transparent;
+    color: #DCCA87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* padding: 10px 20px; */ 
+}
+.right a{
+    text-decoration: none;
+    color: #DCCA87;
+}
+.right img{
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+/* End of TKTFD Section */
+
+/*Start of AUOH Section*/
+.AUOH{
+    
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CentralG{
+    font-size: 30rem;
+    color: #272727;
+    text-align: center;
+    position: absolute;
+}
+.AUOHContentBox{
+    height: 80%;
+    width: 80%;
+    /* border: 2px solid white; */
+    display: flex;
+}
+.AUOHContentBox p{
+    color: #AAAAAA;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    
+}
+.AUOHContentBox h3{
+    font-weight: 500;
+    color: #DCCA87;
+    font-size: 3rem;
+    margin: 0;
+}
+.AUOHContentBox1{
+    /* border: 2px solid red; */
+    margin: 10px;
+    flex: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    z-index: 1;
+}
+.center{
+    /* border: 2px solid red; */
+    margin: 10px;
+    flex: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.mirror{
+    text-align: right;
+}
+.center .knife{
+    height: 100vh;
+    z-index: 1;
+    width: auto;
+    object-fit: contain;
+}
+/*End of AUOH Section*/
+
+/* Start of TS Section*/
+.TSBox{
+    height: auto;
+    /* border: 5px solid white; */
+    padding: 50px 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.TSTop{
+    padding: 5px 0;
+    height: auto;
+    width: 100%;
+    background-color:transparent ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.TSTop p{
+    font-size: 1.3rem;
+    color: white;
+}
+.TSTop h2{
+    margin: 0;
+    font-size: 2.7rem;
+    color:#DCCA87 ;
+}
+.TSContent{
+    /* border: 5px solid green; */
+    height: auto;
+    display: flex;
+    width: 80%;
+    margin-bottom: 30px;
+    background-color: transparent;
+}
+.TSContent .TSContentSpace{
+    flex: 33.3%;
+    height: 100%;
+    margin: 5px;
+    /* border: 2px solid burlywood; */
+}
+/* .TSContent > .center{
+    flex: 30%;
+    height: 90%;
+    background-color: yellow;
+} */
+.TSContent .TSContentSpace img{
+    max-height: 550px;
+    width: 100%;
+    object-fit: contain;
+}
+/* .TSContent > .right{
+    flex: 35%;
+    height: 90%;
+    background-color: purple;
+} */
+.TSContentSpace h2{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: 400;
+}
+.tableBox{
+    background-color: black;
+    /* border: 5px solid green; */
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    height: 550px;
+    /* border: 2px solid red; */
+}
+  
+td {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+}
+
+.itemBox{
+    background-color: black;
+    color: white;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+.title{
+    color: #DCCA87;
+    font-family: "Cormorant Upright", serif;;
+}
+.line{
+    height: 2px ;
+    width: 20%;
+    background-color: white;
+}
+.value{
+    color: white;
+}
+.desc{
+    margin: 0;
+    background-color: transparent;
+    color: #AAAAAA;
+}
+/* End of TS Section*/
+
+/*Start of WWBI Section*/
+.WWBI{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.WWBIContentBox{
+    height: 90%;
+    width: 80%;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.WWBIContentBox1{
+    height: 100%;
+    width: 45%;
+    /* border: 2px solid red; */
+    display: flex;
+}
+.WWBIContentBox1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.WWBIContentBox2{
+    height: 100%;
+    width: 40%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.WWBIContentBox2 h3{
+    margin: 3% 0;
+    font-size: 3.3rem;
+    color: #DCCA87;
+    font-weight: 500;
+}
+.signature{
+    font-family: 'Bestermind', sans-serif;
+                                                
+}
+.centerText{
+    height: auto;
+    padding: 10px 0;
+    width: 100%;
+    background-color: transparent;
+    /* border: 1px solid white; */
+    letter-spacing: 1px;
+    position: relative;
+    font-family: sans-serif;
+}
+.comma {
+    color: white;
+    font-size: 1px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+  }
+.comma img{
+      height: 30px;
+      object-fit: contain;
+}
+.WWBIContentBox2 .Longtext{
+    color: #AAAAAA;
+    text-indent: 3rem;
+    font-style: italic;
+}
+.signature{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #AAAAAA;
+}
+/*End of WWBI Section*/
+
+/*Start of Video Section*/
+.VideoSection{
+    max-height: 80vh;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid white; */
+    /* background-color: aqua; */
+    /* background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VideoSection .mainContent{
+    max-height: 80vh;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VideoSection .mainContent img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*End of Video Section*/
+
+/*Start of AR Section*/
+.AR{
+    
+    min-height: 100vh;
+    height: 100%;
+    width: 96%;
+    padding: 2%;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid white; */
+    position: relative;
+}
+.BiteDelight{
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+    padding: 2% 5%;
+    top: 0;
+    left: 0;
+    /* border: 2px solid white; */
+    /* top: 40px;
+    left: 50px; */
+}
+.ARContentBox{
+    height: 100%;
+    width: 80%;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.ARContentBox1{
+    height: 100%;
+    width: 50%;
+    /* border: 2px solid cornflowerblue; */
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ARContentBox1 img{
+    margin: 0;
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.ARContentBox1 h3{
+    font-weight: 500;
+    color: #DCCA87;
+    font-size: 2.5rem;
+    margin: 0;
+}
+.LaurelBox{
+    height: auto;
+    width: 100%;
+    /* border: 1px solid fuchsia; */
+    display: flex;
+    justify-content: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+.grid-item {
+    width: auto;
+    background-color: transparent;
+    /* border: 1px solid white; */
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.grid-item img{
+    height: auto;
+    width: 20%;
+    object-fit: contain;
+}
+.GIDesc{
+    background-color: transparent;
+    margin: 5%;
+}
+.GIDesc .name{
+    color: #DCCA87;
+}
+.GIDesc .content{
+    color: #AAAAAA;
+    font-family: sans-serif;
+}
+.ARContentBox2{
+    height: 100%;
+    width: 40%;
+    /* border: 2px solid yellow; */
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center
+}
+.ARContentBox2 img{
+    position: relative;
+    max-height: 550px;
+    width: 100%;
+    object-fit: contain;
+}
+.BigG{
+    /* border: 2px solid red; */
+    font-size: 30rem;
+    color: #FAFAFA;
+    z-index: 1;
+    opacity: 40%;
+    position: absolute;
+    margin: 0;
+    top: 22%;
+    right: 35%;
+}
+/*End of AR Section*/
+
+/* Start of PhotoGallery Section */
+.PhotoGallery{
+    min-height: 65vh;
+    width: 100%;
+    background-color: black;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+}
+.PGBox1{
+    height: 90%;
+    width: 27%;
+    padding-left: 5%;
+    /* border: 2px solid cornflowerblue; */
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+}
+.PGBox1 h3{
+    font-weight: 500;
+    color: #DCCA87;
+    font-size: 3rem;
+    margin: 0;
+}
+.PGBox1 img{
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.PGBox1 button{
+    width: 150px;
+    margin: 20px 0;
+}
+.PGBox2{
+    height: 90%;
+    width: 67%;
+    /* border: 2px solid red; */
+    display: flex;
+    color: white;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.PGBox2 img{
+    height: inherit;
+    width: 23%;
+    object-fit: cover;
+    margin: 1.3%;
+    border: 1px solid #AAAAAA;
+}
+.PGBox2 img:hover{
+    filter: brightness(50%);
+}
+/* End of PhotoGallery Section */
+
+/* Start of FindUs Section */
+.FindUs{
+    min-height: 100vh;
+    height: 100%;
+    width: 70%;
+    padding: 0 15%;
+    padding-bottom: 50px;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid white; */
+    flex-direction: row;
+}
+.FindUsBox1{
+    height: 80%;
+    display: flex;
+    flex: 50%;
+    padding: 0 1%;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    justify-content: center
+}
+.FindUsBox1 p{
+    color: white;
+    margin: 10px 0;
+}
+.FindUsBox1 h3{
+    color: #DCCA87;
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.FindUsBox1 img{
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.FindUsBox1 button{
+    width: 120px;
+    margin: 20px 0;
+}
+.FindUsBox2{
+    height: 80%;
+    display: flex;
+    flex: 50%;
+    /* border: 1px solid yellow; */
+}
+.FindUsBox2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+/* End Of of FindUs Section */
+
+/*Start of NewsLetter Section*/
+.NewsLetter{
+    min-height: 60vh;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    /* justify-content: center; */
+    /* border: 1px solid red; */
+    flex-direction: column;
+}
+.NewsLetterContentBox{
+    width: 70%;
+    margin: 0 15%;
+    min-height: 50vh;
+    height: 100%;
+    border: 1px solid #AAAAAA;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.NewsLetterContentBox img{
+    height: auto;
+    width: 40px;
+    object-fit: contain;
+}
+.NewsLetterContentBox p{
+    color: white;
+}
+.NewsLetterContentBox h3{
+    color: #DCCA87;
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+.formBox{
+    width: 70%;
+    min-height: 50px;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    margin: 1% 0;
+}
+/* Style the form element with a border around it */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+/* Add some padding and a grey background color to containers */
+  
+/* Style the input elements and the submit button */
+input[type=text] {
+    background-color: transparent;
+    width: 75%;
+    padding: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: white;
+    box-sizing: border-box;
+    margin: 20px;
+}
+input[type=submit] {
+    height: 35px;
+    max-width: 100px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #DCCA87;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+}
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+.scrollBox{
+    /* padding-top: 100px 0; */
+    height: 100px;
+    width: 90%;
+    background-color: transparent;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.scrollBox > div{
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+}
+.scrollBox a{
+    text-decoration: none;
+    color: #DCCA87;
+}
+/*End of NewsLetter Section*/
+
+/*Start of footer*/
+.Footer{
+    min-height: 60vh;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 1px solid green; */
+    flex-direction: column;
+}
+.FBoxes{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* border: 5px solid red; */
+}
+.FBoxes p{
+    font-family: sans-serif;
+    color: #AAAAAA;
+}
+.Fbox{
+    height: auto;
+    flex: 33%;
+    margin: 2%;
+    /* border: 1px solid white; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.Fbox h2{
+    font-size: 3.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #DCCA87;
+    margin: 0;
+}
+.mediaIcons{
+    margin: 10px;
+}
+.mediaIcons img{
+    padding: 0 5px;
+}
+/*End of footer*/
+
+/* Start of responsive code */
+
+@media screen and (max-width: 1240px) {
+    .TopNavContainer{
+        width: 92%;
+        padding: 0 4%;
+    }
+    .LoginBookContainer{
+        padding: 0;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 990px) {
+    .hamburger{
+        display: flex;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .NavMenuContainer .NavMenuUl , .LoginBookContainer{
+        list-style: none;
+        position: absolute;
+        background-color: black;
+        opacity: 90%;
+        width: 100%;
+        height: 100vh;
+        left: -103%;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: .5s ease left;
+    }
+    .NavMenuContainer .NavMenuUl.active{
+        left: 0;
+    }
+    .NavMenuContainer .NavMenuUl a{
+        /* font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: .2rem; */
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        padding: 20px;
+        display: block;
+    }
+    .NavMenuContainer .NavMenuUl a:hover{
+        color: black;
+    }
+    .NavMenuContainer .NavMenuUl .NavMenuLi:hover a::after{
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: initial;
+    }
+    .NavMenuLi::after{
+        height: 0px;
+    }
+}
+
+/* TAB/SMALL PCs responsive code Starts */
+@media screen and (max-width: 1300px){
+    .TCBox1{
+        flex: 55%;
+    }
+    .TCBox2{
+        flex: 45%;
+    }
+}
+@media screen and (max-width: 910px){
+    .left, .right{
+        display: none;
+    }
+    .TCBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    .TCBox1, .TCBox2{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .WWBIContentBox{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .WWBIContentBox2{
+        width: 80%;
+    }
+    .BigG{
+        display: none;
+    }
+    .PhotoGallery{
+        flex-direction: column;
+        text-align: center;
+    }
+    .PGBox1{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* TAB/SMALL PCs responsive code Starts */
+
+/*MOBILE responsive Code Starts*/
+@media screen and (max-width: 540px){
+    .TSContent{
+        flex-direction: column;
+    }
+    .line{
+        display: none;
+    }
+    .BiteDelight{
+        display: none;
+    }
+    .ARContentBox{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ARContentBox1{
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .LaurelBox{
+        width: 90%;
+    }
+    .grid-container{
+        grid-template-columns: auto;
+    }
+    .FBoxes{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 430px){
+    .TKTFD h3{
+        font-size: 3rem;
+    }
+    .AUOHContentBox{
+        flex-direction: column;
+    }
+    .knife{
+        display: none;
+    }
+    .FindUs{
+        flex-direction: column;
+        display: flex;
+    }
+    .FindUsBox1{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .NewsLetter h3{
+        font-size: 3rem;
+    }
+    .formBox{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+    }
+    form{
+        flex-direction: column;
+        width: 100%;
+    }
+    input[type=submit]{
+        width: auto;
+    }
+
+}
+
+/*MOBILE responsive Code Starts*/
+
+/* End of responsive code */
