@@ -9,6 +9,7 @@ body{
     scrollbar-width: none;
     -ms-overflow-style: none;
     font-family: "Cormorant Upright", serif;;
+    border: none;
 }
 
 /* Hide ScrollBar and Keep functionalitiess */
@@ -735,22 +736,51 @@ td {
     margin: 20px 0;
 }
 .PGBox2{
-    height: 90%;
+    /* height: 90%; */
+    height: 300px;
     width: 67%;
-    /* border: 2px solid red; */
     display: flex;
-    color: white;
-    flex-direction: row;
-    /* justify-content: space-between; */
 }
-.PGBox2 img{
-    height: inherit;
-    width: 23%;
-    object-fit: cover;
-    margin: 1.3%;
-    border: 1px solid #AAAAAA;
+
+.slider-container{
+    overflow: hidden;
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.PGBox2 img:hover{
+.slider-wrapper{
+    width: 95%;
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: -20px;
+}
+.slider-item{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 300px;
+    display: inline-flex;
+    border-radius: 5px;
+    margin-right: 15px;
+    background-color: transparent;
+    cursor: grab;
+}
+.slider-item:last-child{
+     margin-right: 15px;
+}
+.slider-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+.slider-item img:hover{
     filter: brightness(50%);
 }
 /* End of PhotoGallery Section */
