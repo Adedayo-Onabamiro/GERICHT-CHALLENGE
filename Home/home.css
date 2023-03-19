@@ -109,17 +109,17 @@ button:hover{
 }
 
 /* code for the hamburger icon end*/
-.NavMenuUl li {
+.NavMenuLi, .HiddenLi a  {
     display: inline-block;
     padding: 10px 20px;
 }
-.NavMenuUl li a {
+.NavMenuLi a, .HiddenLi a {
     text-decoration: none;
     color: white;
     font-family: sans-serif;
     font-size: 1.05rem;
 }
-.NavMenuUl li a:hover{
+.NavMenuLi a:hover, .HiddenLi a:hover {
     color: #DCCA87;
 }
 .LoginBookContainer{
@@ -195,7 +195,6 @@ button:hover{
     display: flex;
 }
 .TCBox{
-
     height: auto;
     width: 100%;
     background-color: transparent;
@@ -241,18 +240,44 @@ button:hover{
 } 
 .TCBox2{
     height: auto;
+    max-height: 500px;
     /* border: 2px solid green; */
     flex: 55%;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    
+    background-color: transparent; 
 }
 .TCBox2 img{
-    height: 550px;
+    max-height: 550px;
+    height: 100%;
+    max-width: 500px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
+.PaginationBox{
+    height: 70px;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+}
+.Pbtn {
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: #AAAAAA;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .Pactive {
+    color: #DCCA87;
+    font-size: 1.7rem;
+  }
 .right{
     /* padding-top: 100px 0; */
     height: 700px;
@@ -1016,13 +1041,21 @@ input[type=submit]:hover {
         margin: 0;
     }
 }
+@media screen and (min-width: 990px) {
+    .HiddenLi{
+        display: none;
+    }
+}
 @media screen and (max-width: 990px) {
     .hamburger{
         display: flex;
         cursor: pointer;
         z-index: 100;
     }
-    .NavMenuContainer .NavMenuUl , .LoginBookContainer{
+    .LoginBookContainer{
+        display: none;
+    }
+    .NavMenuContainer .NavMenuUl{
         list-style: none;
         position: absolute;
         background-color: black;
@@ -1049,7 +1082,7 @@ input[type=submit]:hover {
         text-decoration: none;
         color: white;
         text-transform: uppercase;
-        padding: 20px;
+        padding: auto;
         display: block;
     }
     .NavMenuContainer .NavMenuUl a:hover{
