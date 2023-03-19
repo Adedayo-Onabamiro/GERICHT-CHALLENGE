@@ -37,3 +37,14 @@ menu_item.forEach((item) => {
 
 // code for responsiveness ends
 
+//CODE FOR PAGINATION AT THE TOP
+// Add active class to the current button (highlight it)
+var Pheader = document.getElementById("PmyDIV");
+var Pbtns = Pheader.getElementsByClassName("Pbtn");
+for (var i = 0; i < Pbtns.length; i++) {
+  Pbtns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("Pactive");
+  current[0].className = current[0].className.replace(" Pactive", "");
+  this.className += " Pactive";
+  });
+}y
