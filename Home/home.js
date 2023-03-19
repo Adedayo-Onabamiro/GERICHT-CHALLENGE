@@ -37,7 +37,9 @@ menu_item.forEach((item) => {
 
 // code for responsiveness ends
 
-//CODE FOR PAGINATION AT THE TOP
+//CODE FOR PAGINATION AT THE TOP FOR NUMBER TO CHANGE
+
+
 // Add active class to the current button (highlight it)
 var Pheader = document.getElementById("PmyDIV");
 var Pbtns = Pheader.getElementsByClassName("Pbtn");
@@ -47,4 +49,36 @@ for (var i = 0; i < Pbtns.length; i++) {
   current[0].className = current[0].className.replace(" Pactive", "");
   this.className += " Pactive";
   });
-}y
+};
+
+//CODE FOR CONTENT TO CHANGE ON PAGINATION NUMBER CLICK
+
+var TCImage = document.getElementById("TCImage");
+var TKTFDTitle = document.getElementById("TCBox1Title");
+var TKTFDText = document.getElementById("Longtext");
+var No1 = document.getElementById("No1");
+var No2 = document.getElementById("No2");
+var No3 = document.getElementById("No3");
+var No4 = document.getElementById("No4");
+
+
+
+No1.addEventListener('click', () => {
+  TKTFDTitle.textContent = "The Key To Fine Dining";
+  TCImage.src = "../images/Hero img.png";
+});
+
+No2.addEventListener("click", () => {
+  TKTFDTitle.textContent = "Make A Toast, Celebrate!";
+  TCImage.src = "../images/insta2.png";
+});
+
+No3.addEventListener("click", () => {
+  TKTFDTitle.textContent = "...Because You Are 'Soup-erb'";
+  TCImage.src = "../images/cala-w6ftFbPCs9I-unsplash.png";
+});
+
+No4.addEventListener("click", () => {
+  TKTFDTitle.textContent = "Have A Break, Have A Steak";
+  TCImage.src = "../images/mgg-vitchakorn-J5ZivsKiu9c-unsplash 2.png";
+});

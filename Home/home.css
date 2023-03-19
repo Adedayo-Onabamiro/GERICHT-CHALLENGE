@@ -240,20 +240,22 @@ button:hover{
 } 
 .TCBox2{
     height: auto;
+    max-height: 500px;
     /* border: 2px solid green; */
     flex: 55%;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    
+    background-color: transparent; 
 }
 .TCBox2 img{
-    height: 550px;
+    max-height: 550px;
+    height: 100%;
+    max-width: 500px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 .PaginationBox{
-    height: auto;
+    height: 70px;
     width: 100%;
     align-items: flex-end;
     justify-content: center;
