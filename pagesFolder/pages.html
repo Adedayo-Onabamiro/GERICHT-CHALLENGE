@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&display=swap" rel="Stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/bestermind" rel="stylesheet">
+                    
+        <!-- fonts -->
+        <link href="/pagesFolder/pages.css" rel="Stylesheet">
+    <title>Pages</title>
+</head>
+<body>
+    <!-- Header section starts, this solely contains the top navigation bar -->
+    <section class="Header" id="Header">
+        <div class="TopNavContainer">
+            <p class="LogoText">Gerícht</p>
+            <nav class="NavMenuContainer">
+                <div class="hamburger"> <div class="bar"></div> </div>
+                <ul class="NavMenuUl">
+                    <li class="NavMenuLi"> <a href=""> Menu </a> </li>
+                    <li class="NavMenuLi"> <a href=""> Pages</a> </li>
+                    <li class="NavMenuLi"> <a href=""> Contact Us </a> </li>
+                    <li class="NavMenuLi"> <a href=""> Blog </a> </li>
+                    <li class="NavMenuLi"> <a href=""> Landing </a> </li>
+
+                    <li class="HiddenLi"> <a href=""> Login </a> </li>
+                    <li class="HiddenLi"> <a href=""> Register </a> </li>
+                    <li class="HiddenLi"> <a href=""> Book Table </a> </li>
+                </ul>
+            </nav>
+            <div class="LoginBookContainer">
+                <div>
+                    <a href="">Log In</a>   
+                    /
+                    <a href="">Registration</a> 
+                </div>
+
+                <img class="fadeLine" src="../images/Vector 5.png">
+
+                <P > <a href="">Book Table</a> </P>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar Section Starts -->
+    <div class="SearchBarBox">
+        <div class="SearchBarForm">
+            <input id="searchInput" type="text" placeholder="Search for a meal">
+            <button id="SearchBtn" type="submit">Search </button>
+        </div>
+    </div>
+
+    <!-- Search meals text Starts -->
+    <p class="SearchMealsText">Search meals or select categories from below</p>
+
+    <!-- food category buttons section start, FCB is an abbv. -->
+    <div class="FoodCategoryButtonBox">
+        <div class="FCBgrid-container">
+            <div class="FCBgrid-item"> <button class="FCB">Breakfast</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Lunch</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Dinner</button> </div>  
+            <div class="FCBgrid-item"> <button class="FCB">Beef</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Chicken</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Egg</button> </div>  
+            <div class="FCBgrid-item"> <button class="FCB">Vegetarian</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Vegan</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Seafood</button> </div>  
+            <div class="FCBgrid-item"> <button class="FCB">Rice</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Dessert</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Pasta</button> </div>  
+            <div class="FCBgrid-item"> <button class="FCB">Soup</button> </div>
+            <div class="FCBgrid-item"> <button class="FCB">Sides</button> </div>  
+          </div>
+    </div>
+
+    <!-- FoodGallery Section Start -->
+    <div class="FoodGalleryBox" id="FoodGalleryBox">
+        <h3 id="statusMsg">Food Not Available, Kindly check for other meals.</h3>
+        <div id="galleryItems" class="galleryItems"></div>
+    </div>
+
+    <script src="/pagesFolder/pages.js"></script>
+</body>
+</html>

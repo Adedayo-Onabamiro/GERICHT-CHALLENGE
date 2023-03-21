@@ -1,0 +1,348 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: "Cormorant Upright", serif;;
+    border: none;
+}
+button{
+    background-color: #DCCA87;
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-family: "Cormorant Upright", serif;;
+}
+button:hover{
+    opacity: 80%;
+}
+/*Start of Top Navigation Section */
+
+.TopNavContainer{
+    background-color: black;
+    width: 80%;
+    padding: 0 10%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.LogoText{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.NavMenuUl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* code for the hamburger icon starts*/
+.hamburger{
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    align-self:center ;
+    display: none;
+    border-radius: 50%;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+}
+ .hamburger:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius:50% ;
+    animation: hamburger_pulse 1s ease infinite;
+}
+ .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+ .hamburger .bar::after,
+ .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+ .hamburger .bar::after{
+    top: 8px;
+}
+ .hamburger .bar::before{
+    bottom: 8px;
+}
+.hamburger.active .bar::before,
+.hamburger.active .bar::after{
+    top: 0;
+    bottom: 0;
+}
+
+/* code for the hamburger icon end*/
+.NavMenuLi, .HiddenLi a  {
+    display: inline-block;
+    padding: 10px 20px;
+}
+.NavMenuLi a, .HiddenLi a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.05rem;
+}
+.NavMenuLi a:hover, .HiddenLi a:hover {
+    color: #DCCA87;
+}
+.LoginBookContainer{
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    padding: 0% 1%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+.fadeLine{
+    padding: 0 10px;
+}
+.LoginBookContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-family: sans-serif;
+}
+.LoginBookContainer a:hover{
+    color: #DCCA87;
+}
+/* End of Top Navigation Section */
+
+/* Search Bar Section */
+.SearchBarBox{
+    height: 100px;
+    width: 80%;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SearchBarForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    border-radius: 5px;
+}
+.SearchBarForm input[type=text] {
+    display: flex;
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 1px solid grey;
+    flex: 80%;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+.SearchBarForm button {
+    display: flex;
+    flex: 20%;
+    font-size: 1.1rem;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+  
+.SearchBarForm button:hover {
+    background: #0b7dda;
+}
+.SearchBarForm::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* Search Meals Text */
+.SearchMealsText{
+    width: 80%;
+    padding: 0 10%;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+/* food category button Sections */
+.FoodCategoryButtonBox{
+    height: auto;
+    width: 80%;
+    padding: 0 10%;
+    display: flex;
+}
+#statusMsg{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    display: none;
+}
+.FCB{
+    width: 90%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.FCBgrid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: transparent;
+    padding: 10px;
+}
+.FCBgrid-item {
+    background-color: transparent;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+/* Food gallery section */
+.FoodGalleryBox{
+    height: auto;
+    width: 80%;
+    padding: 0 10%;
+    margin-bottom: 5%;
+}
+.galleryItems{
+    height: auto;
+    width: 100%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+.galleryItem{
+    margin: 5px;
+    border: 1px solid white;
+    background-color: white;
+}
+.galleryImg{
+    width: 100%;
+    height: auto;
+}
+.galleryImg:hover {
+    border: 1px solid #777;
+}
+.gallerydesc{
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* Start of responsive code */
+@media screen and (max-width: 767px) {
+    .FCBgrid-container, .galleryItems{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 470px) {
+    .FCBgrid-container, .galleryItems{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 350px) {
+    .SearchBarForm{
+        justify-content: space-between;
+        flex-direction: column;
+        margin: auto;
+        padding: auto;
+    }
+    .SearchBarForm button{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 300px) {
+    .FCBgrid-container{
+        display: none;
+    }
+}
+@media screen and (max-width: 1240px) {
+    .TopNavContainer{
+        width: 92%;
+        padding: 0 4%;
+    }
+    .LoginBookContainer{
+        padding: 0;
+        margin: 0;
+    }
+}
+@media screen and (min-width: 990px) {
+    .HiddenLi{
+        display: none;
+    }
+}
+@media screen and (max-width: 990px) {
+    .hamburger{
+        display: flex;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .LoginBookContainer{
+        display: none;
+    }
+    .NavMenuContainer .NavMenuUl{
+        list-style: none;
+        position: absolute;
+        background-color: black;
+        opacity: 90%;
+        width: 100%;
+        height: 100vh;
+        left: -103%;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: .5s ease left;
+    }
+    .NavMenuContainer .NavMenuUl.active{
+        left: 0;
+    }
+    .NavMenuContainer .NavMenuUl a{
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        padding: auto;
+        display: block;
+    }
+    .NavMenuContainer .NavMenuUl a:hover{
+        color: black;
+    }
+    .NavMenuContainer .NavMenuUl .NavMenuLi:hover a::after{
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: initial;
+    }
+    .NavMenuLi::after{
+        height: 0px;
+    }
+}
+/* Start of responsive code */
