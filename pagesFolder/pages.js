@@ -29,7 +29,6 @@ menu_item.forEach((item) => {
 
 
 //CODE FOR GETTING GALLERY CONTENT FROM API
-
 let searchInputBtn = document.getElementById('SearchBtn');
 searchInputBtn.addEventListener('click', ()=>{
   let statusMsg = document.getElementById("statusMsg");
@@ -41,36 +40,72 @@ searchInputBtn.addEventListener('click', ()=>{
   .then(Response => Response.json())
   .then(result => {
     console.log(result);
-    // var mealsLength = result.meals.length;
+    galleryBox.innerHTML = "";
     if (result.meals == null) {
       statusMsg.style.display = "block"
-    } else {
-      statusMsg.style.display = "none"
-      console.log(result.meals.length)
       galleryBox.innerHTML = "";
-      result.meals.forEach(meal => {
-        {
-          var galleryItem = document.createElement('div');
-          galleryItem.className = "galleryItem";
-          var galleryContent = 
-          `
-              <a target="_blank" href="${meal.strMealThumb}">
-              <img id="galleryImg" class="galleryImg" src="${meal.strMealThumb}">
-              </a>
-              <div class="gallerydesc">${meal.strMeal}</div>
-          `;
-          galleryItem.innerHTML = galleryContent;
-          galleryBox.appendChild(galleryItem);
-      }
-      });
+    } else {
+
+      if (searchInputValue == "") {
+        statusMsg.innerText = "Search is empty";
+        galleryBox.innerHTML = "";
+      }else{
+        statusMsg.style.display = "none"
+        console.log(result.meals.length)
+        result.meals.forEach(meal => {
+          {
+            var galleryItem = document.createElement('div');
+            galleryItem.className = "galleryItem";
+            var galleryContent = 
+            `
+                <a target="_blank" href="${meal.strMealThumb}">
+                <img id="galleryImg" class="galleryImg" src="${meal.strMealThumb}">
+                </a>
+                <div class="gallerydesc">${meal.strMeal}</div>
+            `;
+            galleryItem.innerHTML = galleryContent;
+            galleryBox.appendChild(galleryItem);
+        }
+        });
+      } 
     }
   })
-  // .catch(Error => console.log(Error))
 });
-
-
 //CODE FOR GETTING GALLERY CONTENT FROM API
 
 
-
-
+//Code to change search input on button click
+let fcb = document.getElementById("FCB");
+for (let x = 0 ; x < FCB.length ; x ++) {
+  FCB[x].addEventListener('click', ()=>{
+    var chosenBtn = FCB[x];
+    var chosenBtnName = chosenBtn.innerText;
+    function buttonApi() {
+      let api_category_link = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${chosenBtnName}`;
+      let galleryBox = document.getElementById('galleryItems');
+      galleryBox.innerHTML = "";
+      fetch(api_category_link)
+      .then(Response => Response.json())
+      .then(result => {
+        console.log(result);
+            result.meals.forEach(meal => {
+              {
+                var galleryItem = document.createElement('div');
+                galleryItem.className = "galleryItem";
+                var galleryContent = 
+                `
+                    <a target="_blank" href="${meal.strMealThumb}">
+                    <img id="galleryImg" class="galleryImg" src="${meal.strMealThumb}">
+                    </a>
+                    <div class="gallerydesc">${meal.strMeal}</div>
+                `;
+                galleryItem.innerHTML = galleryContent;
+                galleryBox.appendChild(galleryItem);
+            }
+            });
+      })
+    }
+    buttonApi();
+  });
+}
+//Code to change search input on button click

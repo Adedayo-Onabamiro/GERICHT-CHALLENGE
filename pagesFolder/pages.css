@@ -174,7 +174,7 @@ button:hover{
 }
   
 .SearchBarForm button:hover {
-    background: #0b7dda;
+    opacity: 80%;
 }
 .SearchBarForm::after {
     content: "";
@@ -202,7 +202,7 @@ button:hover{
     font-size: 1.2rem;
     display: none;
 }
-.FCB{
+#FCB{
     width: 90%;
     border-radius: 5px;
     font-size: 1.2rem;
