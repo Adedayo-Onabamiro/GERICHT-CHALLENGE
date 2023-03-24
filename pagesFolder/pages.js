@@ -34,6 +34,12 @@ searchInputBtn.addEventListener('click', ()=>{
   let statusMsg = document.getElementById("statusMsg");
   let searchInput = document.getElementById('searchInput');
   let searchInputValue = searchInput.value.trim();
+  var detailsBox1Img =  document.getElementById("detailsBox1Img");
+  var DBMealName = document.getElementById("DBMealName");
+  var DBCategory = document.getElementById("DBCategory");
+  var instructionsText = document.getElementById("instructionsText");
+
+
   let api_img_link = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputValue}`;
   let galleryBox = document.getElementById('galleryItems');
   fetch(api_img_link)
@@ -47,24 +53,52 @@ searchInputBtn.addEventListener('click', ()=>{
     } else {
 
       if (searchInputValue == "") {
-        statusMsg.innerText = "Search is empty";
         galleryBox.innerHTML = "";
       }else{
         statusMsg.style.display = "none"
         console.log(result.meals.length)
         result.meals.forEach(meal => {
           {
+            //code tocreate the gallery items individually
             var galleryItem = document.createElement('div');
             galleryItem.className = "galleryItem";
             var galleryContent = 
             `
-                <a target="_blank" href="${meal.strMealThumb}">
                 <img id="galleryImg" class="galleryImg" src="${meal.strMealThumb}">
-                </a>
                 <div class="gallerydesc">${meal.strMeal}</div>
             `;
             galleryItem.innerHTML = galleryContent;
             galleryBox.appendChild(galleryItem);
+            //code tocreate the gallery items individually ends
+
+            //code for modal section
+            var GIL = result.meals.length; 
+            console.log(`there are gallery items : ${GIL}`);
+            for (let x = 0; x < GIL; x++) {
+              galleryItem.addEventListener("click", ()=>{
+                var modal = document.getElementById("myModalBox");
+                var span = document.getElementsByClassName("close")[0];
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+                modal.style.display = "block"; //display the modal
+                  console.log("modal open");
+                  // galleryBox.innerHTML = ""; 
+                      // statusMsg.style.display = "none"
+                      // console.log(result.meals.length)
+                          detailsBox1Img.src = `${meal.strMealThumb}`;
+                          DBMealName.innerText = `${meal.strMeal}`;
+                          DBCategory.innerText = `Category: ${meal.strCategory}`;
+                          instructionsText.innerText = `${meal.strInstructions}`;
+              }); 
+            }
+             //code for modal ends
         }
         });
       } 
@@ -73,8 +107,18 @@ searchInputBtn.addEventListener('click', ()=>{
 });
 //CODE FOR GETTING GALLERY CONTENT FROM API
 
+//CODE FOR GETTING GALLERY CONTENT FROM API USING ENTER IN SEARCH
+document.getElementById('searchInput').addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById('SearchBtn').click();
+  }
+});
 
-//Code to change search input on button click
+
+
+
+//Code to display foods in different categories on button click
 let fcb = document.getElementById("FCB");
 for (let x = 0 ; x < FCB.length ; x ++) {
   FCB[x].addEventListener('click', ()=>{
@@ -108,4 +152,4 @@ for (let x = 0 ; x < FCB.length ; x ++) {
     buttonApi();
   });
 }
-//Code to change search input on button click
+//Code to display foods in different categories on button click

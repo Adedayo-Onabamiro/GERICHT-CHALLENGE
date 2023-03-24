@@ -192,9 +192,10 @@ button:hover{
 /* food category button Sections */
 .FoodCategoryButtonBox{
     height: auto;
-    width: 80%;
-    padding: 0 10%;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #statusMsg{
     color: white;
@@ -209,7 +210,8 @@ button:hover{
 }
 .FCBgrid-container {
     display: grid;
-    width: 100%;
+    width: 80%;
+    padding: 0 5%;
     grid-template-columns: repeat(5, 1fr);
     background-color: transparent;
     padding: 10px;
@@ -253,16 +255,224 @@ button:hover{
     font-weight: 400;
 }
 
+.bottomBox{
+    height: auto;
+    width: 94%;
+    padding: 0 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    color: #DCCA87;
+    display: flex;
+    align-items: center;
+    height: 90%;
+    width: auto
+}
+.bottom a{
+    text-decoration: none;
+    color: #DCCA87;
+}
+.bottom img{
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+/* Modal section */
+
+/* The Modal (background) */
+.modalBox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    /* border: 1px solid yellow; */
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+  
+/* Modal Content */
+.modal-contentBox {
+    background-color: black;
+    margin: auto;
+    height: auto;
+    /* border: 5px solid #888; */
+    width: 95%;
+    padding: 2%;
+}
+/* The Close Button */
+.close {
+    color: red;
+    float: right;
+    font-size: 3rem;
+    font-weight:900 ;
+    margin: 0 50px;
+}
+.close:hover,
+.close:focus {
+    color: #DCCA87;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modalContent{
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+.detailsBox{
+    max-height: 30vh;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
+.detailsBox1{
+    height: auto;
+    display: flex;
+    background-color: transparent;
+    flex: 60%;
+}
+#detailsBox1Img{
+    height: 100%;
+    width: 100%;
+    object-fit:contain ;
+}
+.detailsBox2{
+    height: auto;
+    display: flex;
+    flex: 40%;
+    color: white;
+    background-color: transparent;  
+    flex-direction: column;
+}
+.detailsBox2 h2,h3,p{
+    margin: .3rem;
+}
+.detailsBox2Details{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex: 80%;
+}
+.pillsBox{
+    display: flex;
+    height: auto;
+}
+.pill{
+    height: auto;
+    width: auto;
+    background-color: #DCCA87;
+    color: black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15%;
+}
+.SaveMealBtn{
+    margin: 5px;
+    border: 1px solid black;
+    width: 50%;
+}
+.ingredientsBox{
+    height: auto;
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ingredientsBox h3{
+    color: white;
+    font-size: 1.7rem;
+    margin-bottom: 5%;
+    text-align: center;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+}
+td, th {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+.instructionsBox{
+    height: auto;
+    width: 100%;
+}
+.instructionsBox h3{
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.instructionsBox p{
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Start of responsive code */
+@media screen and (min-width: 500px) {
+    .bottomBox{
+        display: none;
+    }
+}
 @media screen and (max-width: 767px) {
     .FCBgrid-container, .galleryItems{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+@media screen and (max-width: 550px) {
+    .FCBgrid-container{
+        margin: 0;
+    }
+}
 @media screen and (max-width: 470px) {
     .FCBgrid-container, .galleryItems{
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 425px) {
+    .FoodCategoryButtonBox, .FoodGalleryBox{
+        width: 96%;
+        padding: 0 2%;
+    }
+}
+@media screen and (max-width: 375px) {
+    .FCBgrid-container, .galleryItems{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 @media screen and (max-width: 350px) {
