@@ -31,7 +31,7 @@
 
                     <li class="HiddenLi"> <a href=""> Login </a> </li>
                     <li class="HiddenLi"> <a href=""> Register </a> </li>
-                    <li class="HiddenLi"> <a href=""> Book Table </a> </li>
+                    <li class="HiddenLi"> <a href=""> Saved Meals </a> </li>
                 </ul>
             </nav>
             <div class="LoginBookContainer">
@@ -87,9 +87,6 @@
 
 
     <!-- modal Section Start -->
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-
     <!-- The Modal -->
     <div id="myModalBox" class="modalBox">
         <!-- Modal content -->
@@ -103,90 +100,32 @@
                     <div class="detailsBox2">
                         <div class="detailsBox2Details">
                             <h2>MEAL DETAILS</h2>
-                            <h3 id="DBMealName">Chicken Birhyani</h3>
-                            <P id="DBCategory">Category: Chicken</P>
+                            <h3 id="DBMealName"></h3>
+                            <P id="DBCategory"></P>
 
-                            <div class="pillsBox">
-                                <div class="pill">Heavy</div>
-                                <div class="pill">MainMeal</div>
-                                <div class="pill">Specialty</div>
-                            </div>
+                            <div class="pillsBox" id="pillsBox"></div>
                         </div>
                         <button class="SaveMealBtn" id="SaveMealBtn">Save Meal</button>
                     </div>
                 </div>
 
+                <!-- <div class="ingredientsBox" id="ingredientBox">
+                    <h3>INGREDIENTS</h3>
+                </div> -->
+
                 <div class="ingredientsBox">
                     <h3>INGREDIENTS</h3>
-                    <table>
-                        <tr>
-                          <td>Alfreds Futterkiste</td>
-                          <td>Maria Anders</td>
-                        </tr>
-                        <tr>
-                          <td>Centro comercial Moctezuma</td>
-                          <td>Francisco Chang</td>
-                        </tr>
-                        <tr>
-                          <td>Ernst Handel</td>
-                          <td>Roland Mendel</td>
-                        </tr>
-                        <tr>
-                          <td>Island Trading</td>
-                          <td>Helen Bennett</td>
-                        </tr>
-                        <tr>
-                          <td>Laughing Bacchus Winecellars</td>
-                          <td>Yoshi Tannamuri</td>
-                        </tr>
-                        <tr>
-                          <td>Magazzini Alimentari Riuniti</td>
-                          <td>Giovanni Rovelli</td>
-                        </tr>
-                      </table>
+                    <div class="ingredientContentBox" id="ingredientContentBox">
+                        <div class="ingredientContentLine" id="ingredientContentLine">
+                            <p class="ingredient" id="ingredient">ingredient</p>
+                            <p class="measurement" id="measurement">measurement</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="instructionsBox">
                     <h3>INSTRUCTIONS</h3>
-                    <P id="instructionsText
-                    ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nemo consequatur dolore quas culpa? Dignissimos error 
-                         numquam deleniti delectus fugiat neque harum voluptatum doloribus! Illum 
-                         temporibus repellat id natus sint molestias.
-                    </P>
+                    <P id="instructionsText"></P>
                 </div>
             </div>
         </div>
