@@ -28,6 +28,7 @@ menu_item.forEach((item) => {
 // code for top navigation hamburger responsiveness ends
 
 
+
 //CODE FOR GETTING GALLERY CONTENT FROM API
 let searchInputBtn = document.getElementById('SearchBtn');
 searchInputBtn.addEventListener('click', ()=>{
@@ -51,6 +52,7 @@ searchInputBtn.addEventListener('click', ()=>{
     galleryBox.innerHTML = "";
     pillsBox.innerHTML = "";
     ingredientContentBox.innerHTML = "";
+    let SavedMealsArr = [];
 
     if (result.meals == null) {
       statusMsg.style.display = "block"
@@ -76,6 +78,7 @@ searchInputBtn.addEventListener('click', ()=>{
             galleryItem.innerHTML = galleryContent;
             galleryBox.appendChild(galleryItem);
             //code to create the gallery items individually ends
+            
         }
         });
       } 
@@ -103,6 +106,7 @@ function foodCategory(){
         let api_category_link = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${chosenBtnName}`;
         let galleryBox = document.getElementById('galleryItems');
         galleryBox.innerHTML = "";
+        let SavedMealsArr = [];
         fetch(api_category_link)
         .then(Response => Response.json())
         .then(result => {
@@ -119,6 +123,7 @@ function foodCategory(){
                   `;
                   galleryItem.innerHTML = galleryContent;
                   galleryBox.appendChild(galleryItem);
+
               }
               });
         })
@@ -130,84 +135,104 @@ function foodCategory(){
 foodCategory();
 //Code to display foods in different categories on button click
 
-//code to save meal or remove meal on button click
-
-//code to save meal or remove meal on button click end
-
-
+//details function which contains card creation and modal opening
 function details(id) {
   let api_id_link = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+  let SavedMealsArr = [];
   fetch(api_id_link)
   .then(result => result.json())
   .then(detail => {
     var ingredientContentBox = document.getElementById("ingredientContentBox");
     ingredientContentBox.innerHTML = "";
     let meal = detail.meals[0]
-            //code for modal section
-            var GIL = detail.meals.length; 
-            // console.log(`there are gallery items : ${GIL}`);
-            for (let x = 0; x < GIL; x++) {
-                var modal = document.getElementById("myModalBox");
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function() {
-                  modal.style.display = "none";
-                }
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                  if (event.target == modal) {
-                    modal.style.display = "none";
-                  }
-                }
-                modal.style.display = "block"; //display the modal
-                  console.log("modal open");
-                  detailsBox1Img.src = `${meal.strMealThumb}`;
-                  DBMealName.innerText = `${meal.strMeal}`;
-                  DBCategory.innerText = `Category: ${meal.strCategory}`;
-                  instructionsText.innerText = `${meal.strInstructions}`;
-                  
-                  //create pills code
-                  pillsBox.innerHTML = "";
-                  var pillContent = `${meal.strTags}`;
-                  var pillContentArr = pillContent.split(",");
-                  console.log(pillContentArr);
-                  for (let x = 0; x < pillContentArr.length; x++) {
-                    if (pillContent == "null") {
-                      console.log("no tags");
-                    } else {
-                      var pill = document.createElement('div');
-                      pill.className = "pill";
-                      pill.innerText = pillContentArr[x];
-                      // console.log(pillContent);
-                      pillsBox.appendChild(pill);  
-                    }
-                  }
-                  //create pills code end
+    //code for modal section
+    var GIL = detail.meals.length; 
+    // console.log(`there are gallery items : ${GIL}`);
+    for (let x = 0; x < GIL; x++) {
+        var modal = document.getElementById("myModalBox");
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        modal.style.display = "block"; //display the modal
+          console.log("modal open");
+          detailsBox1Img.src = `${meal.strMealThumb}`;
+          DBMealName.innerText = `${meal.strMeal}`;
+          DBCategory.innerText = `Category: ${meal.strCategory}`;
+          instructionsText.innerText = `${meal.strInstructions}`;
+          
+          let SaveMealBtn = document.getElementById("SaveMealBtn");
+          SaveMealBtn.addEventListener("click", () => {
+            console.log(meal.strMeal);
+            // SavedMealsArr.push(meal.strMeal);
+            // console.log(`saved meals : ${SavedMealsArr}`);
+            // console.log("saved button click");
+          })
+          //code to save meal or remove meal on button click end
 
-                  //create table for ingredients
-                  let count = 1;
-                  let ingredientArr = [];
-                  for (let i in meal){
-                    let ingredient = "";
-                    let measurement = "";
-                    if (i.startsWith("strIngredient") && meal [i]){
-                      ingredient = meal[i];
-                      measurement = meal[`strMeasure` + count];
-                      count += 1;
-                      ingredientArr.push(ingredient, measurement);
-
-                      let ingredientContentLine = document.createElement("div");
-                      ingredientContentLine.className = "ingredientContentLine"
-                      ingredientContentLineContent = 
-                      `
-                      <p class="ingredient" id="ingredient">${meal[i]}</p>
-                      <p class="measurement" id="measurement">${measurement}</p>
-                      `
-                      ingredientContentLine.innerHTML = ingredientContentLineContent;
-                      document.getElementById("ingredientContentBox").appendChild(ingredientContentLine);
-                    }
-                  }
-                  //create table for ingredients
+          //create pills code
+          pillsBox.innerHTML = "";
+          var pillContent = `${meal.strTags}`;
+          var pillContentArr = pillContent.split(",");
+          console.log(pillContentArr);
+          for (let x = 0; x < pillContentArr.length; x++) {
+            if (pillContent == "null") {
+              console.log("no tags");
+            } else {
+              var pill = document.createElement('div');
+              pill.className = "pill";
+              pill.innerText = pillContentArr[x];
+              // console.log(pillContent);
+              pillsBox.appendChild(pill);  
             }
-             //code for modal ends
+          }
+          //create pills code end
+
+          //create table for ingredients
+          let count = 1;
+          let ingredientArr = [];
+          for (let i in meal){
+            let ingredient = "";
+            let measurement = "";
+            if (i.startsWith("strIngredient") && meal [i]){
+              ingredient = meal[i];
+              measurement = meal[`strMeasure` + count];
+              count += 1;
+              ingredientArr.push(ingredient, measurement);
+
+              let ingredientContentLine = document.createElement("div");
+              ingredientContentLine.className = "ingredientContentLine"
+              ingredientContentLineContent = 
+              `
+              <p class="ingredient" id="ingredient">${meal[i]}</p>
+              <p class="measurement" id="measurement">${measurement}</p>
+              `
+              ingredientContentLine.innerHTML = ingredientContentLineContent;
+              document.getElementById("ingredientContentBox").appendChild(ingredientContentLine);
+            }
+          }
+          //create table for ingredients
+    }
+      //code for modal ends
   }
 )}
+//details function which contains card creation and modal opening
+
+
+//code to save meal or remove meal on button click
+let SaveMealBtn = document.getElementById("SaveMealBtn");
+SaveMealBtn.addEventListener("click", () => {
+  // SavedMealsArr.push(meal.strMeal);
+  let count = 0;
+  count = count + 1;
+  console.log(count);
+  // console.log(`saved meals : ${SavedMealsArr}`);
+  // console.log("saved button click");
+})
+//code to save meal or remove meal on button click end
