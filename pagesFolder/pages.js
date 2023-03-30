@@ -1,3 +1,5 @@
+// import {SavedMealsContainer} from "./pagesFolder/savedFolder/saved.js";
+
 // code for top navigation hamburger responsiveness
 const hamburger = document.querySelector('.hamburger');
 const mobile_menu = document.querySelector('.NavMenuContainer .NavMenuUl');
@@ -48,11 +50,11 @@ searchInputBtn.addEventListener('click', ()=>{
   fetch(api_img_link)
   .then(Response => Response.json())
   .then(result => {
-    console.log(result);
+    // console.log(result);
     galleryBox.innerHTML = "";
     pillsBox.innerHTML = "";
     ingredientContentBox.innerHTML = "";
-    let SavedMealsArr = [];
+
 
     if (result.meals == null) {
       statusMsg.style.display = "block"
@@ -94,7 +96,6 @@ document.getElementById('searchInput').addEventListener("keypress", (event) => {
     document.getElementById('SearchBtn').click();
   }
 });
-
 //Code to display foods in different categories on button click
 function foodCategory(){
   let fcb = document.getElementById("FCB");
@@ -110,7 +111,7 @@ function foodCategory(){
         fetch(api_category_link)
         .then(Response => Response.json())
         .then(result => {
-          console.log(result);
+          // console.log(result);
               result.meals.forEach(meal => {
                 {
                   var galleryItem = document.createElement('div');
@@ -138,7 +139,6 @@ foodCategory();
 //details function which contains card creation and modal opening
 function details(id) {
   let api_id_link = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
-  let SavedMealsArr = [];
   fetch(api_id_link)
   .then(result => result.json())
   .then(detail => {
@@ -161,26 +161,17 @@ function details(id) {
           }
         }
         modal.style.display = "block"; //display the modal
-          console.log("modal open");
+          // console.log("modal open");
           detailsBox1Img.src = `${meal.strMealThumb}`;
           DBMealName.innerText = `${meal.strMeal}`;
           DBCategory.innerText = `Category: ${meal.strCategory}`;
           instructionsText.innerText = `${meal.strInstructions}`;
-          
-          let SaveMealBtn = document.getElementById("SaveMealBtn");
-          SaveMealBtn.addEventListener("click", () => {
-            console.log(meal.strMeal);
-            // SavedMealsArr.push(meal.strMeal);
-            // console.log(`saved meals : ${SavedMealsArr}`);
-            // console.log("saved button click");
-          })
-          //code to save meal or remove meal on button click end
 
           //create pills code
           pillsBox.innerHTML = "";
           var pillContent = `${meal.strTags}`;
           var pillContentArr = pillContent.split(",");
-          console.log(pillContentArr);
+          // console.log(pillContentArr);
           for (let x = 0; x < pillContentArr.length; x++) {
             if (pillContent == "null") {
               console.log("no tags");
@@ -218,21 +209,26 @@ function details(id) {
             }
           }
           //create table for ingredients
+
+          //code to save meal or remove meal on button click
+          let SavedMealsArr = [];
+          SaveMealBtn.addEventListener("click", () => {
+            function load() {
+              SavedMealsArr = JSON.parse(localStorage.getItem("notes")) || [];
+              console.log(SavedMealsArr);
+            }
+            function notes() {
+              SavedMealsArr.push(meal);
+              localStorage.setItem("notes", JSON.stringify(SavedMealsArr));
+              console.log(SavedMealsArr);
+            }
+            load();
+            notes();
+          });
+          // module.exports = {SavedMealsArr};
+          //code to save meal or remove meal on button click ends
     }
       //code for modal ends
   }
 )}
 //details function which contains card creation and modal opening
-
-
-//code to save meal or remove meal on button click
-let SaveMealBtn = document.getElementById("SaveMealBtn");
-SaveMealBtn.addEventListener("click", () => {
-  // SavedMealsArr.push(meal.strMeal);
-  let count = 0;
-  count = count + 1;
-  console.log(count);
-  // console.log(`saved meals : ${SavedMealsArr}`);
-  // console.log("saved button click");
-})
-//code to save meal or remove meal on button click end

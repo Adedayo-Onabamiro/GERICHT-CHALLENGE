@@ -133,126 +133,57 @@ button:hover{
 }
 /* End of Top Navigation Section */
 
-/* Search Bar Section */
-.SearchBarBox{
-    height: 100px;
-    width: 80%;
-    padding: 0 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.SearchBarForm{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    border-radius: 5px;
-}
-.SearchBarForm input[type=text] {
-    display: flex;
-    padding: 10px;
-    font-size: 1.1rem;
-    border: 1px solid grey;
-    flex: 80%;
-    background: #f1f1f1;
-    border-radius: 5px;
-}
-.SearchBarForm button {
-    display: flex;
-    flex: 20%;
-    font-size: 1.1rem;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-  
-.SearchBarForm button:hover {
-    opacity: 80%;
-}
-.SearchBarForm::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-/* Search Meals Text */
-.SearchMealsText{
-    width: 80%;
-    padding: 0 10%;
-    color: white;
-    text-align: center;
-    font-size: 1.2rem;
-}
-/* food category button Sections */
-.FoodCategoryButtonBox{
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#statusMsg{
-    color: white;
-    text-align: center;
-    font-size: 1.2rem;
-    display: none;
-}
-#FCB{
-    width: 90%;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
-.FCBgrid-container {
-    display: grid;
-    width: 80%;
-    padding: 0 5%;
-    grid-template-columns: repeat(5, 1fr);
-    background-color: transparent;
-    padding: 10px;
-}
-.FCBgrid-item {
-    background-color: transparent;
-    padding: 5px;
-    margin: 5px;
-    text-align: center;
-}
 /* Food gallery section */
-.FoodGalleryBox{
+#SavedMealTitle{
+    color: white;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #DCCA87;
+}
+.SavedMealBox{
     height: auto;
     width: 80%;
     padding: 0 10%;
     margin-bottom: 5%;
 }
-.galleryItems{
+.SavedMeals{
     height: auto;
     width: 100%;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
 }
-.galleryItem{
+.SavedMeal{
     margin: 5px;
     border: 1px solid white;
-    background-color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.galleryImg{
+.SavedMealImg{
     width: 100%;
     height: auto;
 }
-.galleryImg:hover {
+.SavedMealImg:hover {
     border: 1px solid #777;
 }
-.gallerydesc{
+.SavedMealdesc{
     padding: 15px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
+    color: white;
+}
+#RemoveMealBtn{
+    justify-self: baseline;
+    width: 100%;
+    font-size: 1.3rem;
 }
 
+
+/* bottom box start */
 .bottomBox{
     height: auto;
     width: 94%;
@@ -283,157 +214,7 @@ button:hover{
 }
 /* Modal section */
 
-/* The Modal (background) */
-.modalBox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    /* border: 1px solid yellow; */
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    margin: 0;
-    padding: 0;
-}
-  
-/* Modal Content */
-.modal-contentBox {
-    background-color: black;
-    margin: auto;
-    height: auto;
-    /* border: 5px solid #888; */
-    width: 95%;
-    padding: 2%;
-}
-/* The Close Button */
-.close {
-    color: red;
-    float: right;
-    font-size: 3rem;
-    font-weight:900 ;
-    margin: 0 50px;
-}
-.close:hover,
-.close:focus {
-    color: #DCCA87;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modalContent{
-    height: auto;
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-}
-.detailsBox{
-    height: auto;
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5%;
-}
-.detailsBox1{
-    height: auto;
-    display: flex;
-    background-color: transparent;
-    flex: 60%;
-}
-#detailsBox1Img{
-    height: 30vh;
-    width: 100%;
-    object-fit:contain ;
-}
-.detailsBox2{
-    height: auto;
-    display: flex;
-    flex: 40%;
-    color: white;
-    background-color: transparent;  
-    flex-direction: column;
-}
-.detailsBox2 h2,h3,p{
-    margin: .3rem;
-}
-.detailsBox2Details{
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    flex: 80%;
-}
-.pillsBox{
-    display: flex;
-    height: auto;
-}
-.pill{
-    height: auto;
-    width: auto;
-    background-color: #DCCA87;
-    color: black;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 15%;
-}
-.SaveMealBtn{
-    margin: 5px;
-    border: 1px solid black;
-    width: 50%;
-}
-.ingredientsBox{
-    height: auto;
-    width: 100%;
-}
-.ingredientContentBox{
-    height: auto;
-    width: 100%;
-    border: 1px solid white;
-    margin: 5% 0;
-}
-.ingredientsBox h3{
-    color: white;
-    font-size: 1.7rem;
-    text-align: center;
-    margin-bottom: 5%;
-}
-.ingredientContentLine{
-    height: auto;
-    width: 100%;
-    border: 1px solid white;
-    display: flex;
-    color: white;
-    flex-direction: row;
-}
-.ingredient, .measurement{
-    flex: 50%;
-    text-align: left;
-    color: white;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    font-weight: normal;
-}
 
-
-------------------
-.instructionsBox{
-    height: auto;
-    width: 96%;
-    padding: 0 2%;
-}
-.instructionsBox h3{
-    color: white;
-    font-size: 1.7rem;
-    text-align: center;
-    margin-bottom: 5%;
-}
-.instructionsBox p{
-    color: white;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    font-weight: normal;
-}
 
 /* Start of responsive code */
 @media screen and (min-width: 500px) {
@@ -442,40 +223,23 @@ button:hover{
     }
 }
 @media screen and (max-width: 767px) {
-    .FCBgrid-container, .galleryItems{
+     .SavedMeals{
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media screen and (max-width: 550px) {
-    .FCBgrid-container{
-        margin: 0;
-    }
-}
 @media screen and (max-width: 470px) {
-    .FCBgrid-container, .galleryItems{
+     .SavedMeals{
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media screen and (max-width: 425px) {
-    .FoodCategoryButtonBox, .FoodGalleryBox{
+    .SavedMealBox{
         width: 96%;
         padding: 0 2%;
     }
-    .detailsBox{
-        flex-direction: column;
-    }
-    .detailsBox2{
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .pillsBox{
-        align-items: center;
-        justify-content: center;
-    }
 }
 @media screen and (max-width: 375px) {
-    .FCBgrid-container, .galleryItems{
+    .SavedMeals{
         grid-template-columns: repeat(1, 1fr);
     }
 }
