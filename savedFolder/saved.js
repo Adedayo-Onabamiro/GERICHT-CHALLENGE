@@ -36,7 +36,6 @@ let SavedMeals = document.getElementById('SavedMeals');
 SavedMealsArr.forEach(savedMeal => {
     //code to create the savedMeal items individually
     var SavedMeal = document.createElement('div');
-    SavedMeal.setAttribute("onclick", `details("${savedMeal.idMeal}")`)
     SavedMeal.className = "SavedMeal";
     var SavedMealContent = 
     `
