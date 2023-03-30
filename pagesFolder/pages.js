@@ -65,7 +65,6 @@ searchInputBtn.addEventListener('click', ()=>{
         galleryBox.innerHTML = "";
       }else{
         statusMsg.style.display = "none"
-        console.log(result.meals.length)
         result.meals.forEach(meal => {
           {
             //code tocreate the gallery items individually
@@ -215,15 +214,17 @@ function details(id) {
           SaveMealBtn.addEventListener("click", () => {
             function load() {
               SavedMealsArr = JSON.parse(localStorage.getItem("notes")) || [];
-              console.log(SavedMealsArr);
+              // console.log(SavedMealsArr);
             }
             function notes() {
               SavedMealsArr.push(meal);
+              SavedMealsArr.filter((meal,index) => SavedMealsArr.indexOf(meal) === meal )
               localStorage.setItem("notes", JSON.stringify(SavedMealsArr));
               console.log(SavedMealsArr);
             }
             load();
             notes();
+            window.location.reload();
           });
           // module.exports = {SavedMealsArr};
           //code to save meal or remove meal on button click ends
