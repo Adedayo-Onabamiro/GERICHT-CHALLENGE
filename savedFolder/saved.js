@@ -61,6 +61,7 @@ for (let x = 0 ; x < RemoveMealBtn.length ; x ++) {
 let DeleteAllMeals = document.getElementById("DeleteAllMeals");
 DeleteAllMeals.addEventListener("click", ()=>{
   window.localStorage.clear();
+  window.location.reload();
 });
 
 // code for delete all Meals button ends
