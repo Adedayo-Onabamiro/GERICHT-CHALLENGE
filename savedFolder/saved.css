@@ -141,6 +141,11 @@ button:hover{
     font-weight: 400;
     color: #DCCA87;
 }
+#DeleteAllMeals{
+    background-color: red;
+    margin-bottom: 5%;
+    color: white;
+}
 .SavedMealBox{
     height: auto;
     width: 80%;
@@ -162,12 +167,12 @@ button:hover{
     flex-direction: column;
     justify-content: space-between;
 }
+.SavedMeal:hover{
+    filter: brightness(70%);
+}
 .SavedMealImg{
     width: 100%;
     height: auto;
-}
-.SavedMealImg:hover {
-    border: 1px solid #777;
 }
 .SavedMealdesc{
     padding: 15px;

@@ -27,9 +27,7 @@ menu_item.forEach((item) => {
 });
 // code for top navigation hamburger responsiveness ends
 
-
-// // export let SavedMealsContainer = document.getElementById("SavedMealsContainer");
-
+// code to create individual meal items and append to container as well
 let SavedMealsArr = JSON.parse(localStorage.getItem("notes"));
 let SavedMealBox = document.getElementById("SavedMealBox");
 let SavedMeals = document.getElementById('SavedMeals');
@@ -45,5 +43,45 @@ SavedMealsArr.forEach(savedMeal => {
     `;
     SavedMeal.innerHTML = SavedMealContent;
     SavedMeals.appendChild(SavedMeal);
-    //code to create the gallery items individually ends
+    //code to create the savedMeal items individually ends
 });
+// code to create individual meal items and append to container as well
+
+
+let RemoveMealBtns = document.getElementById("RemoveMealBtn");
+for (let x = 0 ; x < RemoveMealBtn.length ; x ++) {
+  RemoveMealBtn[x].addEventListener("click", ()=>{
+    let RemoveMealBtnPE = RemoveMealBtn[x].parentElement;
+     RemoveMealBtnPE.remove();
+    console.log(SavedMealsArr);
+  });
+};
+
+// code for delete all Meals button
+let DeleteAllMeals = document.getElementById("DeleteAllMeals");
+DeleteAllMeals.addEventListener("click", ()=>{
+  window.localStorage.clear();
+});
+
+// code for delete all Meals button ends
+
+
+// Random Codes that i might need later
+// let RemoveMealBtns = document.getElementById("RemoveMealBtn");
+// for (let x = 0 ; x < RemoveMealBtn.length ; x ++) {
+//   RemoveMealBtn[x].addEventListener("click", ()=>{
+//     // RemoveMealBtns.parentElement.innerHTML = "";
+//     // console.log(RemoveMealBtn[x].parentElement);
+//     let RemoveMealBtnPE = RemoveMealBtn[x].parentElement;
+//     RemoveMealBtnPE.innerHTML = "";
+//      localStorage.removeItem(RemoveMealBtnPE);
+//   });
+// };
+
+    // for (let x = 0 ; x < SavedMealsArr.length ; x ++) {
+    //   SavedMealsArr.pop(x);
+    // }
+    // SavedMealsArr.forEach(savedMeal => {
+    //   SavedMealsArr.pop();
+    // });
+    // console.log(`new array = ${SavedMealsArr}`);

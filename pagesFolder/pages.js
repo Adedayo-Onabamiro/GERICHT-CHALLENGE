@@ -224,6 +224,7 @@ function details(id) {
             }
             load();
             notes();
+            alert("Meal Added")
             window.location.reload();
           });
           // module.exports = {SavedMealsArr};
